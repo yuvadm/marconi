@@ -6,6 +6,7 @@ sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get install build-essential git subversion
 wget http://www.sbrac.org/files/build-gnuradio && chmod a+x ./build-gnuradio && ./build-gnuradio
+echo "export PYTHONPATH=/usr/local/lib/python2.7/dist-packages" >> ~/.bashrc
 SCRIPT
 
 Vagrant.configure("2") do |config|

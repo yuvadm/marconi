@@ -39,7 +39,7 @@ bash 'Compile rtl-sdr' do
     group 'vagrant'
     cwd node[:workingdir] + '/rtl-sdr'
     code <<-EOH
-        cmake .
+        cmake . -DINSTALL_UDEV_RULES=ON
         make clean
         make
     EOH

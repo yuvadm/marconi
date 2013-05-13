@@ -34,3 +34,21 @@ git 'Checkout gr-osmosdr' do
     group 'vagrant'
 end
 
+bash 'Compile rtl-sdr' do
+    user 'vagrant'
+    group 'vagrant'
+    cwd node[:workingdir] + '/rtl-sdr'
+    code <<-EOH
+        cmake .
+        make clean
+        make
+    EOH
+end
+
+bash 'Install rtl-sdr' do
+    cwd node[:workingdir] + '/rtl-sdr'
+    code <<-EOH
+        make install
+        ldconfig
+    EOH
+end

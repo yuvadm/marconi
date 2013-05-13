@@ -4,7 +4,7 @@ An easy-to-use [Vagrant](http://docs.vagrantup.com/v2/)-based setup for GNU Radi
 
 ## Usage
 
-First, download and install the latest version of Vagrant from [http://downloads.vagrantup.com](http://downloads.vagrantup.com). Do not count on your package manager to deliver the latest version of Vagrant.
+First, download and install the latest version of Vagrant from [http://downloads.vagrantup.com](http://downloads.vagrantup.com). Do not count on your package manager to deliver the latest version of Vagrant. Currently, VirtualBox is the only supported VM provider, and it must be installed with the [extension pack](https://www.virtualbox.org/wiki/Downloads) to enable USB EHCI mode, which is required for rtl-sdr usage.
 
 Once Vagrant is set up:
 

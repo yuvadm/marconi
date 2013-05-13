@@ -24,3 +24,9 @@ Halt or destroy the instance with:
 ```bash
 $ vagrant [halt|destroy]
 ```
+
+## License and Credits
+
+Marconi is released under the [GPLv3](http://www.gnu.org/licenses/gpl-3.0.txt) license.
+
+Created by Yuval Adam, based on the [`build-gnuradio`](http://www.sbrac.org/files/build-gnuradio) script by Marcus Leech.

@@ -15,6 +15,7 @@ Vagrant.configure('2') do |config|
 
     config.vm.provider 'virtualbox' do |v|
         v.customize ['modifyvm', :id, '--usb', 'on']
+        v.customize ['modifyvm', :id, '--usbehci', 'on']
         v.customize ['usbfilter', 'add', '0', '--target', :id, '--name', 'rtl2832u', '--vendorid', '0x0bda']
     end
 

@@ -25,6 +25,10 @@ Halt or destroy the instance with:
 $ vagrant [halt|destroy]
 ```
 
+## Chef Cookbook Usage
+
+Since the Vagrant box provisioning process (in this case) is built upon [Chef Solo](http://docs.opscode.com/chef_solo.html) and contains a standard cookbook, it can be used standalone to configure an existing machine, with a preconfigured Chef setup.
+
 ## License and Credits
 
 Marconi is released under the [GPLv3](http://www.gnu.org/licenses/gpl-3.0.txt) license.

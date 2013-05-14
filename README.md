@@ -19,6 +19,15 @@ Initially running `vagrant up` will take a while since Vagrant will need to down
 $ vagrant ssh
 ```
 
+Marconi clones, builds and installs:
+
+ - GNU Radio
+ - gr-osmosdr
+ - rtl-sdr
+ - gqrx
+
+All repos exist in `/home/vagrant/dev`.
+
 Halt or destroy the instance with:
 
 ```bash

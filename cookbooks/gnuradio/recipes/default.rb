@@ -34,6 +34,15 @@ git 'Checkout gr-osmosdr' do
     group 'vagrant'
 end
 
+git 'Checkout gqrx' do
+    repository node[:repos][:gqrx]
+    reference 'master'
+    action :checkout
+    destination node[:workingdir] + '/gqrx'
+    user 'vagrant'
+    group 'vagrant'
+end
+
 bash 'Compile rtl-sdr' do
     user 'vagrant'
     group 'vagrant'
@@ -92,5 +101,15 @@ bash 'Install gr-osmosdr' do
     code <<-EOH
         make install
         ldconfig
+    EOH
+end
+
+bash 'Compile gqrx' do
+    user 'vagrant'
+    group 'vagrant'
+    cwd node[:workingdir] + '/gqrx'
+    code <<-EOH
+        qmake gqrx.pro
+        make
     EOH
 end

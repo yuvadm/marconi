@@ -9,7 +9,8 @@ First, download and install the latest version of Vagrant from [http://downloads
 Once Vagrant is set up:
 
 ```bash
-$ git clone git://github.com/yuvadm/marconi.git && cd marconi
+$ git clone git://github.com/yuvadm/marconi.git
+$ cd marconi
 $ vagrant up
 ```
 
@@ -36,7 +37,7 @@ $ vagrant [halt|destroy]
 
 ## Chef Cookbook Usage
 
-Since the Vagrant box provisioning process (in this case) is built upon [Chef Solo](http://docs.opscode.com/chef_solo.html) and contains a standard cookbook, it can be used standalone to configure an existing machine, with a preconfigured Chef setup.
+Since the Vagrant box provisioning process (in this case) is built upon [Chef Solo](http://docs.opscode.com/chef_solo.html) and contains a standard cookbook, it can be used standalone to configure an existing Ubuntu machine (precise, 32 bit), with a preconfigured Chef setup.
 
 ## License and Credits
 

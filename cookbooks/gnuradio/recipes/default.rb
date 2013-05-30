@@ -11,6 +11,7 @@ git 'Checkout gnuradio' do
     repository node[:repos][:gnuradio]
     reference 'master'
     action :checkout
+    revision 'v3.6.5'
     destination node[:workingdir] + '/gnuradio'
     user 'vagrant'
     group 'vagrant'
@@ -29,6 +30,7 @@ git 'Checkout gr-osmosdr' do
     repository node[:repos][:gr_osmosdr]
     reference 'master'
     action :checkout
+    revision 'gr3.6'
     destination node[:workingdir] + '/gr-osmosdr'
     user 'vagrant'
     group 'vagrant'

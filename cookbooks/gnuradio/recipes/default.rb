@@ -115,3 +115,14 @@ bash 'Compile gqrx' do
         make
     EOH
 end
+
+bash 'Configure sound (alsa)' do
+    cwd '/'
+    code <<-EOH
+        adduser vagrant audio
+        amixer -c 0 -- sset Master playback -10dB
+        amixer -c 0 -- sset Master unmute
+        amixer -c 0 -- sset PCM playback -10dB
+        amixer -c 0 -- sset PCM unmute
+    EOH
+end

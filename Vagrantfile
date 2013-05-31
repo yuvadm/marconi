@@ -8,6 +8,13 @@ Vagrant.configure('2') do |config|
 
     config.vm.provider 'virtualbox' do |v|
         v.customize ['modifyvm', :id, '--usb', 'on']
+
+        # Audio - Specific to Mac OS X
+        v.customize ['modifyvm', :id, '--audio', 'coreaudio']
+
+        # Audio - Specific to Linux
+        #v.customize ['modifyvm', :id, '--audio', 'oss']
+
         v.customize ['modifyvm', :id, '--usbehci', 'on']
         v.customize ['usbfilter', 'add', '0', '--target', :id, '--name', 'rtl2832u', '--vendorid', '0x0bda']
     end

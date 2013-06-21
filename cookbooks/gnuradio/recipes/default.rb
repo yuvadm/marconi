@@ -26,6 +26,15 @@ git 'Checkout rtl-sdr' do
     group 'vagrant'
 end
 
+git 'Checkout hackrf' do
+    repository node[:repos][:hackrf]
+    reference 'master'
+    action :checkout
+    destination node[:workingdir] + '/hackrf'
+    user 'vagrant'
+    group 'vagrant'
+end
+
 git 'Checkout gr-osmosdr' do
     repository node[:repos][:gr_osmosdr]
     reference 'master'
@@ -58,6 +67,44 @@ end
 
 bash 'Install rtl-sdr' do
     cwd node[:workingdir] + '/rtl-sdr'
+    code <<-EOH
+        make install
+        ldconfig
+    EOH
+end
+
+bash 'Compile libhackrf' do
+    user 'vagrant'
+    group 'vagrant'
+    cwd node[:workingdir] + '/hackrf/host/libhackrf'
+    code <<-EOH
+        cmake .
+        make clean
+        make
+    EOH
+end
+
+bash 'Install libhackrf' do
+    cwd node[:workingdir] + '/hackrf/host/libhackrf'
+    code <<-EOH
+        make install
+        ldconfig
+    EOH
+end
+
+bash 'Compile hackrf-tools' do
+    user 'vagrant'
+    group 'vagrant'
+    cwd node[:workingdir] + '/hackrf/host/hackrf-tools'
+    code <<-EOH
+        cmake .
+        make clean
+        make
+    EOH
+end
+
+bash 'Install hackrf-tools' do
+    cwd node[:workingdir] + '/hackrf/host/hackrf-tools'
     code <<-EOH
         make install
         ldconfig
